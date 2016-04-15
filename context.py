@@ -1,4 +1,5 @@
-﻿# -*- coding: utf-8 -*-
+﻿#!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
 #     Copyright (C) 2016 Taifxx
 #
@@ -101,15 +102,13 @@ class plgMain():
         except : pass
          
         ## Define Visible conditions ...
-        curVisCond         = {
-                              self.container, 
-                              TAG_CND_NOTFOUND  if not self.isFound        else TAG_CND_FOUND, 
-                              TAG_CND_NEWSRC    if self.isNewSource        else TAG_CND_OLDSRC, 
-                              TAG_CND_NEWFRC    if self.isNewFolSource     else TAG_CND_OLDFRC, 
-                              TAG_TYP_FOLDER    if self.items.vidIsFolder  else TAG_TYP_FILE, 
-                              TAG_CND_LISTEMPTY if self.items.vidIsEmpty   else Empty, 
-                              TAG_CND_NOUPD     if not addon.ADDUPD        else Empty
-        } 
+        curVisCond         = {self.container,
+                              TAG_CND_NOTFOUND  if not self.isFound        else TAG_CND_FOUND,
+                              TAG_CND_NEWSRC    if self.isNewSource        else TAG_CND_OLDSRC,
+                              TAG_CND_NEWFRC    if self.isNewFolSource     else TAG_CND_OLDFRC,
+                              TAG_TYP_FOLDER    if self.items.vidIsFolder  else TAG_TYP_FILE,
+                              TAG_CND_LISTEMPTY if self.items.vidIsEmpty   else Empty,
+                              TAG_CND_NOUPD     if not addon.ADDUPD        else Empty}
         
                               
         ## Define Main Menue ...
